@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WattWorks eBike Repair | Rocklin, CA | eBikes, Scooters, Sur-Rons &amp; More</title>
+  <meta name="description" content="WattWorks eBike Repair in Rocklin, CA. We repair eBikes, electric scooters, Sur-Rons, Hyperscooters and any electric two-wheeler. Serving Placer and Sacramento counties. Call 916-824-6302.">
+  <meta name="theme-color" content="#fffaf4">
+  <meta property="og:title" content="WattWorks eBike Repair | Rocklin, CA">
+  <meta property="og:description" content="Repair for eBikes, electric scooters, Sur-Rons, Hyperscooters and any electric two-wheeler. Serving Placer and Sacramento counties.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "WattWorks eBike Repair",
+    "description": "Repair for eBikes, electric scooters, Sur-Rons, Hyperscooters and other electric two-wheeled vehicles.",
+    "telephone": "+1-916-824-6302",
+    "email": "rocklin.pev.repair@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Rocklin", "addressRegion": "CA", "addressCountry": "US" },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Placer County, California" },
+      { "@type": "AdministrativeArea", "name": "Sacramento County, California" }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --ink: #231f20;
+      --blue: #d8e2f2;
+      --blue-soft: #eef3fa;
+      --pink: #deb2d1;
+      --pink-soft: #f5e4ef;
+      --gold: #f8c870;
+      --maroon: #6e3340;
+      --peach: #f6e2d6;
+      --cream: #fffaf4;
+      --radius: 20px;
+      --serif: "Fraunces", Georgia, "Times New Roman", serif;
+      --sans: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--maroon); }
+    h1, h2, h3 { font-family: var(--serif); line-height: 1.15; margin: 0 0 .5em; color: var(--ink); }
+    h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); letter-spacing: -.01em; }
+    h2 { font-size: clamp(1.8rem, 4.5vw, 2.5rem); }
+    h3 { font-size: 1.25rem; }
+    p { margin: 0 0 1em; }
+
+    :focus-visible { outline: 3px solid var(--maroon); outline-offset: 3px; border-radius: 6px; }
+
+    .wrap { width: min(1120px, 100% - 40px); margin-inline: auto; }
+    section { padding: clamp(56px, 9vw, 96px) 0; }
+    .eyebrow {
+      display: inline-block;
+      font-weight: 800;
+      font-size: .85rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--maroon);
+      margin-bottom: .9rem;
+    }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      padding: .85rem 1.5rem;
+      font: 800 1.05rem/1 var(--sans);
+      text-decoration: none;
+      color: var(--ink);
+      background: #fff;
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+      box-shadow: 3px 3px 0 var(--ink);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--ink); }
+    .btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+    .btn-gold { background: var(--gold); }
+    .btn svg { width: 1.15em; height: 1.15em; flex: none; }
+
+    /* ---------- Sticky call bar ---------- */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 250, 244, .96);
+      backdrop-filter: blur(8px);
+      border-bottom: 2.5px solid var(--ink);
+    }
+    .topbar .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 68px;
+    }
+    .brand img { height: 40px; width: auto; }
+    .nav { display: none; gap: 26px; }
+    .nav a {
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 6px 2px;
+      border-bottom: 3px solid transparent;
+    }
+    .nav a:hover { border-bottom-color: var(--pink); }
+    .topbar .btn { padding: .65rem 1.1rem; font-size: 1rem; white-space: nowrap; }
+    .call-label { display: none; }
+    @media (min-width: 440px) { .call-label { display: inline; } }
+    @media (min-width: 860px) {
+      .nav { display: flex; }
+      .brand img { height: 46px; }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero { background: var(--blue); padding-top: clamp(40px, 7vw, 72px); overflow: hidden; }
+    .hero .wrap { display: grid; gap: 32px; align-items: center; }
+    .hero p.lead { font-size: 1.2rem; max-width: 34ch; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin: 1.6rem 0 1rem; }
+    .hero-note { font-weight: 600; font-size: .98rem; margin: 0; }
+    .hero-art { position: relative; justify-self: center; width: min(520px, 100%); }
+    .hero-art::before {
+      content: "";
+      position: absolute;
+      inset: 8% 6% 4% 10%;
+      background: var(--pink);
+      border: 2.5px solid var(--ink);
+      border-radius: 46% 54% 50% 50% / 52% 46% 54% 48%;
+    }
+    .hero-art img { position: relative; width: 100%; }
+    @media (min-width: 860px) {
+      .hero .wrap { grid-template-columns: 1.05fr .95fr; gap: 48px; }
+    }
+
+    /* ---------- Highlights strip ---------- */
+    .strip { background: var(--ink); color: #fff; padding: 22px 0; }
+    .strip ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px 28px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .strip li::before { content: "\26A1\FE0E"; color: var(--gold); margin-right: .5rem; }
+    @media (min-width: 760px) { .strip ul { grid-template-columns: repeat(3, 1fr); } }
+
+    /* ---------- Services ---------- */
+    .section-head { max-width: 640px; margin-bottom: 2.2rem; }
+    .section-head p { font-size: 1.1rem; }
+
+    .works-on { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 2.6rem; padding: 0; list-style: none; }
+    .works-on li {
+      padding: .55rem 1.15rem;
+      font-weight: 800;
+      background: var(--peach);
+      border: 2.5px solid var(--ink);
+      border-radius: 999px;
+    }
+    .works-on li:nth-child(3n+1) { background: var(--blue); }
+    .works-on li:nth-child(3n+2) { background: var(--pink-soft); }
+
+    .cards { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .card {
+      background: #fff;
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+    .card h3 { display: flex; align-items: center; gap: .6rem; }
+    .card h3::before {
+      content: "";
+      width: 14px; height: 14px; flex: none;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2.5px solid var(--ink);
+    }
+    .card:nth-child(3n+2) h3::before { background: var(--pink); }
+    .card:nth-child(3n+3) h3::before { background: var(--blue); }
+    .card p { margin: 0; font-size: 1rem; }
+    .services-note { margin-top: 2rem; font-weight: 700; }
+
+    /* ---------- About ---------- */
+    .about { background: var(--pink-soft); }
+    .about .wrap { display: grid; gap: 36px; align-items: center; }
+    .about-art { justify-self: center; width: min(340px, 70%); position: relative; }
+    .about-art::before {
+      content: "";
+      position: absolute;
+      inset: 10% -8% 0 -8%;
+      background: var(--blue);
+      border: 2.5px solid var(--ink);
+      border-radius: 50% 50% 46% 54% / 58% 44% 56% 42%;
+    }
+    .about-art img { position: relative; }
+    @media (min-width: 860px) {
+      .about .wrap { grid-template-columns: .8fr 1.2fr; gap: 64px; }
+    }
+
+    /* ---------- Service area ---------- */
+    .area-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .area {
+      border: 2.5px solid var(--ink);
+      border-radius: var(--radius);
+      padding: 26px;
+      background: var(--blue-soft);
+    }
+    .area:nth-child(2) { background: var(--peach); }
+    .area:nth-child(3) { background: var(--pink-soft); }
+    .area h3 { margin-bottom: .3rem; }
+    .area p { margin: 0; }
+
+    /* ---------- FAQ ---------- */
+    .faq { background: var(--blue-soft); }
+    .faq-list { max-width: 780px; display: grid; gap: 14px; }
+    details {
+      background: #fff;
+      border: 2.5px solid var(--ink);
+      border-radius: 16px;
+      padding: 0 22px;
+    }
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 18px 0;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      flex: none;
+      width: 30px; height: 30px;
+      display: grid; place-items: center;
+      font-size: 1.3rem; line-height: 1;
+      background: var(--gold);
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+    }
+    details[open] summary::after { content: "\2212"; }
+    details p { padding-bottom: 18px; margin: 0; }
+
+    /* ---------- Contact ---------- */
+    .contact { background: var(--ink); color: #fff; }
+    .contact h2 { color: #fff; }
+    .contact .eyebrow { color: var(--gold); }
+    .contact-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 2rem; }
+    .contact-card {
+      background: var(--cream);
+      color: var(--ink);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 2.5px solid var(--gold);
+    }
+    .contact-card h3 { margin-bottom: .25rem; }
+    .contact-card .big {
+      display: block;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(1.35rem, 4.2vw, 1.8rem);
+      margin: .2rem 0 1rem;
+      color: var(--maroon);
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+    .contact-card .big:hover { text-decoration: underline; }
+    .contact p.fine { margin-top: 1.6rem; color: #e9e4de; max-width: 60ch; }
+
+    /* ---------- Footer ---------- */
+    footer { background: var(--cream); padding: 34px 0; text-align: center; font-size: .95rem; }
+    footer img { height: 44px; width: auto; margin: 0 auto 12px; }
+    footer p { margin: 0 0 .3rem; }
+    footer a { font-weight: 700; }
+
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky call bar -->
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="WattWorks eBike Repair, back to top">
+        <img src="images/logo.png" alt="WattWorks eBike Repair" width="107" height="40">
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-gold" href="tel:+19168246302">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        <span><span class="call-label">Call </span>916-824-6302</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Rocklin, CA &middot; Placer &amp; Sacramento Counties</span>
+          <h1>Your electric ride, back up and running.</h1>
+          <p class="lead">WattWorks eBike Repair fixes eBikes, electric scooters, Sur-Rons, Hyperscooters, and anything else electric with two wheels.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="tel:+19168246302">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+              Call 916-824-6302
+            </a>
+            <a class="btn" href="mailto:rocklin.pev.repair@gmail.com?subject=Repair%20request">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.5 7v.1L12 12.4 19.5 7.1V7L12 12.2z"/></svg>
+              Send an email
+            </a>
+          </div>
+          <p class="hero-note">We work on a call-for-service basis. Give us a ring and we&rsquo;ll get you scheduled.</p>
+        </div>
+        <div class="hero-art">
+          <img src="images/rider-ribbons.png" alt="Illustration of a cyclist in a flowing pink skirt and ribbons riding an electric bike with lightning bolts in the wheels" width="1100" height="1049">
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <div class="strip">
+      <div class="wrap">
+        <ul>
+          <li>Any electric two-wheeler</li>
+          <li>Serving Placer &amp; Sacramento counties</li>
+          <li>Call for service</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">What we work on</span>
+          <h2>If it&rsquo;s electric and has two wheels, we fix it.</h2>
+          <p>From daily commuters to trail-ready machines, we repair personal electric vehicles of all kinds.</p>
+        </div>
+
+        <ul class="works-on">
+          <li>eBikes</li>
+          <li>Electric scooters</li>
+          <li>Sur-Rons</li>
+          <li>Hyperscooters</li>
+          <li>Other electric two-wheelers</li>
+        </ul>
+
+        <div class="section-head">
+          <h2>Services</h2>
+          <p>General bike and eBike repair, plus the electrical side that makes an eBike an eBike.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Tune-ups &amp; safety checks</h3>
+            <p>A full once-over so everything shifts, stops and rolls the way it should.</p>
+          </article>
+          <article class="card">
+            <h3>Brakes</h3>
+            <p>Adjustment, pad and rotor replacement, and cable or hydraulic brake service.</p>
+          </article>
+          <article class="card">
+            <h3>Drivetrain &amp; shifting</h3>
+            <p>Chains, cassettes, derailleurs and shifter tuning for smooth, quiet gear changes.</p>
+          </article>
+          <article class="card">
+            <h3>Tires, tubes &amp; wheels</h3>
+            <p>Flat repair, tire and tube swaps, spoke repair and wheel truing.</p>
+          </article>
+          <article class="card">
+            <h3>Batteries</h3>
+            <p>Diagnosing range and charging problems, and battery troubleshooting and replacement.</p>
+          </article>
+          <article class="card">
+            <h3>Motors &amp; controllers</h3>
+            <p>Finding out why your motor cuts out, stutters or won&rsquo;t respond.</p>
+          </article>
+          <article class="card">
+            <h3>Wiring, displays &amp; electrical</h3>
+            <p>Throttles, sensors, displays, lights and connectors: the small parts that cause big headaches.</p>
+          </article>
+          <article class="card">
+            <h3>Parts &amp; accessories</h3>
+            <p>Fenders, racks, lights, grips, saddles and other upgrades installed properly.</p>
+          </article>
+          <article class="card">
+            <h3>Assembly &amp; setup</h3>
+            <p>Getting a new bike or scooter built, adjusted and ready to ride.</p>
+          </article>
+        </div>
+
+        <p class="services-note">Don&rsquo;t see your problem listed? Call or email and tell us what&rsquo;s going on with your ride.</p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <div class="wrap">
+        <div class="about-art">
+          <img src="images/rider-standing.png" alt="Illustration of a woman in a pink skirt standing beside her bicycle" width="800" height="1211" loading="lazy">
+        </div>
+        <div>
+          <span class="eyebrow">About WattWorks</span>
+          <h2>Friendly, local electric-ride repair.</h2>
+          <!-- Edit this section to tell your own story: how you got started, years of experience, brands you love, etc. -->
+          <p>WattWorks eBike Repair is a locally owned repair business based in Rocklin, California. We work on eBikes and personal electric vehicles of every kind, including electric scooters, Sur-Rons, Hyperscooters, and just about anything electric with two wheels.</p>
+          <p>Whether your ride needs a simple adjustment or a deeper electrical diagnosis, we&rsquo;re here to help you get back out there. Call us, tell us what&rsquo;s going on, and we&rsquo;ll take it from there.</p>
+          <a class="btn btn-gold" href="tel:+19168246302">Call 916-824-6302</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service area -->
+    <section id="area">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Where we work</span>
+          <h2>Serving Placer County, Sacramento County &amp; beyond.</h2>
+          <p>Based in Rocklin and happy to help riders across the region.</p>
+        </div>
+        <div class="area-grid">
+          <div class="area">
+            <h3>Placer County</h3>
+            <p>Rocklin, Roseville, Lincoln, Loomis, Granite Bay, Auburn and nearby.</p>
+          </div>
+          <div class="area">
+            <h3>Sacramento County</h3>
+            <p>Sacramento, Folsom, Citrus Heights, Elk Grove, Rancho Cordova and nearby.</p>
+          </div>
+          <div class="area">
+            <h3>Surrounding areas</h3>
+            <p>Not on the list? Give us a call and ask. We serve the surrounding areas too.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Good to know</span>
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>How do I get my bike or scooter repaired?</summary>
+            <p>We work on a call-for-service basis. Call 916-824-6302 or email rocklin.pev.repair@gmail.com, tell us about your ride and what&rsquo;s going on, and we&rsquo;ll get you scheduled.</p>
+          </details>
+          <details>
+            <summary>What kinds of vehicles do you repair?</summary>
+            <p>All kinds of eBikes and personal electric vehicles, including electric scooters, Sur-Rons and Hyperscooters. If it&rsquo;s electric and has two wheels, we work on it.</p>
+          </details>
+          <details>
+            <summary>Do you do regular bike repair too?</summary>
+            <p>Yes. We handle general bike and eBike services like tune-ups, brakes, drivetrains, tires and wheels, along with the electrical work.</p>
+          </details>
+          <details>
+            <summary>What areas do you serve?</summary>
+            <p>All of Placer County and Sacramento County, plus the surrounding areas. If you&rsquo;re not sure whether you&rsquo;re in range, just ask.</p>
+          </details>
+          <details>
+            <summary>How much does a repair cost?</summary>
+            <p>It depends on your vehicle and what it needs. Call or email with the details and we&rsquo;ll talk it through with you.</p>
+          </details>
+          <details>
+            <summary>I&rsquo;m not sure what&rsquo;s wrong. Can you still help?</summary>
+            <p>Absolutely. Describe what you&rsquo;re noticing, whether that&rsquo;s a strange noise, a dead battery or a motor that cuts out, and we&rsquo;ll help figure it out.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Get in touch</span>
+          <h2>Ready to get rolling? Give us a call.</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Call us</h3>
+            <a class="big" href="tel:+19168246302">916-824-6302</a>
+            <a class="btn btn-gold" href="tel:+19168246302">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+              Call now
+            </a>
+          </div>
+          <div class="contact-card">
+            <h3>Email us</h3>
+            <a class="big" href="mailto:rocklin.pev.repair@gmail.com?subject=Repair%20request">rocklin.pev.repair@gmail.com</a>
+            <a class="btn" href="mailto:rocklin.pev.repair@gmail.com?subject=Repair%20request">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.5 7v.1L12 12.4 19.5 7.1V7L12 12.2z"/></svg>
+              Send an email
+            </a>
+          </div>
+        </div>
+        <p class="fine">WattWorks operates on a call-for-service basis. When you reach out, tell us what you ride and what&rsquo;s going on with it so we can get you scheduled.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <img src="images/logo.png" alt="WattWorks eBike Repair" width="118" height="44" loading="lazy">
+    <p><strong>WattWorks eBike Repair</strong> &middot; Rocklin, CA</p>
+    <p>Serving Placer &amp; Sacramento Counties</p>
+    <p><a href="tel:+19168246302">916-824-6302</a> &middot; <a href="mailto:rocklin.pev.repair@gmail.com">rocklin.pev.repair@gmail.com</a></p>
+    <p>&copy; 2026 WattWorks eBike Repair</p>
+  </footer>
+
+
+</body>
+</html>
